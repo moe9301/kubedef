@@ -17,16 +17,16 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: sample-app
+  name: proxmox-csi
   namespace: argocd
 spec:
   project: default
   destination:
-    namespace: application
+    namespace: csi-proxmox
     server: https://kubernetes.default.svc
   source:
-    path: sample-app/
-    repoURL: https://github.com/kurtburak/argocd.git
+    path: argocd/csi-proxmox
+    repoURL: https://github.com/moe9301/kubedef.git
     targetRevision: HEAD
   syncPolicy:
     syncOptions:
@@ -34,4 +34,5 @@ spec:
     automated:
       selfHeal: true
       prune: true
-      
+
+
