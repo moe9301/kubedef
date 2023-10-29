@@ -17,15 +17,15 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: proxmox-csi
+  name: proxmox
   namespace: argocd
 spec:
   project: default
   destination:
-    namespace: csi-proxmox
+    namespace: argocd
     server: https://kubernetes.default.svc
   source:
-    path: argocd/csi-proxmox
+    path: argocd/proxmox
     repoURL: https://github.com/moe9301/kubedef.git
     targetRevision: HEAD
   syncPolicy:
