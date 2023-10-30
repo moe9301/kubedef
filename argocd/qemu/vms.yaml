@@ -24,7 +24,7 @@ spec:
       tag: 0 # set to 0 if tag not needed
   disk:
     scsi0:
-      storage: local
+      storage: local-lvm
       size: 9G
   tags:
     - sidero
@@ -70,7 +70,7 @@ spec:
       tag: 0 # set to 0 if tag not needed
   disk:
     scsi0:
-      storage: local
+      storage: local-lvm
       size: 9G
   tags:
     - sidero
