@@ -17,7 +17,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: proxmox
+  name: apps
   namespace: argocd
 spec:
   project: default
@@ -25,28 +25,7 @@ spec:
     namespace: argocd
     server: https://kubernetes.default.svc
   source:
-    path: argocd/proxmox
-    repoURL: https://github.com/moe9301/kubedef.git
-    targetRevision: HEAD
-  syncPolicy:
-    syncOptions:
-      - CreateNamespace=true
-    automated:
-      selfHeal: true
-      prune: true
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: qemu
-  namespace: argocd
-spec:
-  project: default
-  destination:
-    namespace: argocd
-    server: https://kubernetes.default.svc
-  source:
-    path: argocd/qemu
+    path: argocd/
     repoURL: https://github.com/moe9301/kubedef.git
     targetRevision: HEAD
   syncPolicy:
