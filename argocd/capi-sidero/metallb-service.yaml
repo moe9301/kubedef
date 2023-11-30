@@ -7,7 +7,7 @@ metadata:
     metallb.universe.tf/allow-shared-ip: "sidero"
 spec:
   type: LoadBalancer
-  loadBalancerIP: 10.0.0.33
+  loadBalancerIP: 10.0.0.40
   selector:
     app: sidero
   ports:
@@ -29,7 +29,7 @@ metadata:
     metallb.universe.tf/allow-shared-ip: "sidero"
 spec:
   type: LoadBalancer
-  loadBalancerIP: 10.0.0.33
+  loadBalancerIP: 10.0.0.40
   selector:
     app: sidero
   ports:
