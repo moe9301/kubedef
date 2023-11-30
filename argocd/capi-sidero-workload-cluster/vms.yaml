@@ -24,7 +24,7 @@ spec:
       tag: 0 # set to 0 if tag not needed
   disk:
     scsi0:
-      storage: local
+      storage: local # local seems to be broken in proxmox-operator, leading to wrong filename (api 500), needs to be manually attached
       size: 9G
   tags:
     - sidero

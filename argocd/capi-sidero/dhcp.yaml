@@ -43,12 +43,12 @@ stringData:
   
   
     # IP address for PXE-based TFTP methods
-    next-server 10.0.0.33;
+    next-server 10.0.0.40;
   
     # Configuration for iPXE clients
     class "ipxeclient" {
       match if exists user-class and (option user-class = "iPXE");
-      filename "http://10.0.0.33:8081/tftp/undionly.kpxe";
+      filename "http://10.0.0.40:8081/tftp/undionly.kpxe";
     }
   
     # Configuration for legacy BIOS-based PXE boot
@@ -67,7 +67,7 @@ stringData:
     class "httpclients" {
       match if not exists user-class and substring (option vendor-class-identifier, 0, 10) = "HTTPClient";
       option vendor-class-identifier "HTTPClient";
-      filename "http://10.0.0.33:8081/tftp/ipxe.efi";
+      filename "http://10.0.0.40:8081/tftp/ipxe.efi";
     }
 ---
 # Source: talos-dhcp-server/templates/deployment.yaml
